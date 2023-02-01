@@ -7,3 +7,26 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+
+body {
+    min-height: 100vh;
+}
+
+.title {
+    padding: 100px;
+}
+
+.image {
+    padding: 15px;
+    display: flex;
+}
+
+.image img{
+    border-radius: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 0 15px 0 0;
+}
