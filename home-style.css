@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-    padding: 100px;
+    padding: 100px 0;
 }
 
 .image {
@@ -21,12 +21,45 @@ body {
     display: flex;
 }
 
-.image img{
+img{
     border-radius: 20px;
+    max-width: 100%;
+    transition: 0.4s ease-in;
+}
+
+.border-animation{
+    border-radius: 20px;
+    background: rgb(5, 10, 24);
     position: relative;
-    left: 0;
-    top: 0;
-    max-width: 50%;
-    max-height: 50%;
-    margin: 0 15px 0 0;
+}
+
+.border-animation::before, .border-animation::after{
+    content: '';
+    border-radius: 20px 20px 20px 20px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, 	#4B0082, #0047AB, #6495ED, #0047AB, #4B0082);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 30s linear infinite;
+}
+.border-animation::after{
+    filter: blur(7px);
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
